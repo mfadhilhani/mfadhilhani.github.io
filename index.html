@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fadhil Portfolio</title>
     <link href="dist/output.css" rel="stylesheet">
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 
 <body>
 
     <!-- Header start -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 backdrop-blur">
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
         <div class="container">
             <div class="flex items-center justify-between relative">
                 <div class="px-4">
@@ -26,27 +34,30 @@
                     </button>
 
                     <nav id="nav-menu"
-                        class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent">
+
+
                         <ul class="block lg:flex">
                             <li class="group">
                                 <a href="#home"
-                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary">Beranda</a>
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Beranda</a>
                             </li>
                             <li class="group">
                                 <a href="#about"
-                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary">Tentang Saya</a>
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Tentang
+                                    Saya</a>
                             </li>
                             <li class="group">
                                 <a href="#portfolio"
-                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary">Portfolio</a>
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Portfolio</a>
                             </li>
                             <li class="group">
                                 <a href="#kelas"
-                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary">Kelas</a>
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Kelas</a>
                             </li>
                             <li class="group">
                                 <a href="#contact"
-                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary">Contact</a>
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
                             </li>
                             <li class="group mt-3 lg:mt-0">
                                 <!-- Tambahkan mt-3 di sini -->
@@ -54,12 +65,28 @@
                                     class="w-full h-10 rounded-full bg-primary outline-none border-none cursor-pointer text-lg font-semibold group relative">
                             <li class="group">
                                 <a href="Masuk.html"
-                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary">
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white ">
                                     <span
-                                        class="absolute inset-0 flex items-center justify-center group-hover:text-white">Login</span>
+                                        class="absolute inset-0 flex items-center justify-center group-hover:text-white dark:text-dark">Login</span>
                                 </a>
                             </li>
                             </button>
+                            </li>
+
+                            <li class="flex items-center pl-8 mt-3 lg:mt-0">
+                                <div class="flex">
+                                    <span class="mr-2 text-slate-500 text-sm">light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle">
+                                    <label for="dark-toggle">
+                                        <div
+                                            class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                            <div
+                                                class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-slate-500 text-sm">dark</span>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -70,15 +97,16 @@
     <!-- Header End -->
 
     <!-- Hero section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <!-- Kiri -->
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primairy lg:text-xl "> Halo Semua 🙌, Saya <span
-                            class="block font-bold text-dark text-3xl mt-1 lg:text-4xl">Muhammad Fadhil Hani</span></h1>
+                    <h1 class="text-base font-semibold text-primary lg:text-xl "> Halo Semua 🙌, Saya <span
+                            class="block font-bold text-dark text-3xl mt-1 lg:text-5xl dark:text-white">Muhammad Fadhil
+                            Hani</span></h1>
                     <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl"><span
-                            class="text-dark ">Mahasiswa</span> |
+                            class="text-dark dark:text-white ">Mahasiswa</span> |
                         Programer</h2>
                     <p class="text-medium text-secondary mb-10 leading-relaxed">Mahasiswa di Universitas Negeri Makassar
                         Angkatan 2022 Kelas PTIK E</p>
@@ -89,8 +117,8 @@
                 <!-- Kanan -->
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:mt-0 lg:right-0">
-                        <img src="dist/img/Fadhil.png" alt="Fadhil" class="max-w-full mx-auto" />
-                        <span class="absolute top-10 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+                        <img src="dist/img/Fadhil.png" alt="Fadhil" class="max-w-full mx-auto relative z-10" />
+                        <span class="absolute top-10 left-1/2 -translate-x-1/2 md:scale-125">
 
                             <svg width="400px" height="400px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#D12D09"
@@ -106,19 +134,20 @@
     <!-- Hero section End -->
 
     <!-- About section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h4 class="font-bold uppercase text-primary text-lg mb-3">TENTANG SAYA</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Salam Kenal</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Salam Kenal</h2>
                     <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Saya Muhammad Fadhil Hani biasa
                         di panggil Fadhil. Saya seorang mahasiswa yang berkuliah di Universitas Negeri Makassar jurusan
                         Teknik Informatika & komputer prodi Pendidikan Teknik Informatika & Komputer Kelas PTIK E Angkat
                         2022</p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Mari berteman</h3>
+                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Mari berteman
+                    </h3>
                     <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Anda bisa menfollow sosial media
                         saya di bawah ini</p>
                     <div class="flex items-center">
@@ -174,12 +203,14 @@
     <!-- About section End -->
 
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-100">
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto  text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Project Terbaru</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Project
+                        Terbaru
+                    </h2>
                     <p class="font-medium text-md  text-secondary md:text-lg">Ini Adalah Project yang saya pernah buat
                     </p>
                 </div>
@@ -190,7 +221,7 @@
                         <a href="https://mfadhilhani.github.io/" target="_blank"><img src="dist/img/Portfolio/1.png"
                                 alt="Landing Page" width="w-full"></a>
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 1</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Project 1</h3>
                     <p class="font-medium text-base text-secondary">Landing Page</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
@@ -198,7 +229,7 @@
                         <a href="https://mfadhilhani.github.io/Portofolio/" target="_blank"><img
                                 src="dist/img/Portfolio/2.png" alt="Portofolio" width="w-full"></a>
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 2</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Project 2</h3>
                     <p class="font-medium text-base text-secondary">Portofolio</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
@@ -206,7 +237,7 @@
                         <a href="https://mfadhilhani.github.io/Weblanding/" target="_blank"><img
                                 src="dist/img/Portfolio/3.png" alt="Weblanding" width="w-full"></a>
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 3</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Project 3</h3>
                     <p class="font-medium text-base text-secondary">Weblanding</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
@@ -214,7 +245,7 @@
                         <a href="https://mfadhilhani.github.io/Selamat/" target="_blank"><img
                                 src="dist/img/Portfolio/4.png" alt="Kartu ucapan" width="w-full"></a>
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Project 4</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Project 4</h3>
                     <p class="font-medium text-base text-secondary">Kartu ucapan Selamat Ulang Tahun</p>
                 </div>
             </div>
@@ -223,12 +254,12 @@
     <!-- Portfolio Section End -->
 
     <!-- Kelas Section Start -->
-    <section id="kelas" class="pt-36 pb-32 bg-slate-700">
+    <section id="kelas" class="pt-36 pb-32 bg-slate-700 dark:bg-slate-300">
         <div class="container">
             <div class="w-full px-4">
                 <div class=" mx-auto  text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Kelas</h4>
-                    <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">PTIK E</h2>
+                    <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-dark">PTIK E</h2>
                     <p class="font-medium text-md  text-secondary md:text-lg">Ini adalah kumpulan foto studio PTIK E
                         2022</p>
                 </div>
@@ -240,21 +271,21 @@
                         class="rounded-md shadow-md overflow-hidden grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="dist/img/Kelas/LOA57084.JPG" alt="1" width="w-full" />
                     </div>
-                    <h3 class="font-semibold text-xl text-white mt-5 mb-3 text-center">Almamater</h3>
+                    <h3 class="font-semibold text-xl text-white mt-5 mb-3 text-center dark:text-dark">Almamater</h3>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div
                         class="rounded-md shadow-md overflow-hidden grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="dist/img/Kelas/LOA57095.JPG" alt="2" width="w-full" />
                     </div>
-                    <h3 class="font-semibold text-xl text-white mt-5 mb-3 text-center">Sekolah</h3>
+                    <h3 class="font-semibold text-xl text-white mt-5 mb-3 text-center dark:text-dark">Sekolah</h3>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div
                         class="rounded-md shadow-md overflow-hidden grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="dist/img/Kelas/LOA57057.JPG" alt="3" width="w-full" />
                     </div>
-                    <h3 class="font-semibold text-xl text-white mt-5 mb-3 text-center">Hitam Putih</h3>
+                    <h3 class="font-semibold text-xl text-white mt-5 mb-3 text-center dark:text-dark">Hitam Putih</h3>
                 </div>
             </div>
         </div>
@@ -262,12 +293,12 @@
     <!-- Kelas Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-32 dark:bg-white">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto mb-16 max-w-xl text-center">
                     <h4 class="mb-2 text-lg font-semibold text-primary">Contact</h4>
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl">Hubungi Saya
+                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Hubungi Saya
                     </h2>
                     <p class="text-md font-medium text-secondary md:text-lg">Kamu bisa menghubungi saya dengan mengisi
                         form di bawah</p>
@@ -302,7 +333,7 @@
     <!-- Contact Section End -->
 
     <!-- Footer Start -->
-    <footer class="bg-dark pt-24 pb-12">
+    <footer class=" pt-24 pb-12 bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
@@ -336,7 +367,7 @@
                             <a href="#about" class="mb-3 inline-block text-base hover:text-primary">Tentang Saya</a>
                         </li>
                         <li>
-                            <a href="#portfolio" class="mb-3 inline-block text-base hover:text-primary">Portfolio</a>
+                            <a href="#portfolio" class="mb-3 inline-block text-base hover:text-primary">Portflio</a>
                         </li>
                         <li>
                             <a href="#kelas" class="mb-3 inline-block text-base hover:text-primary">Kelas</a>
@@ -412,14 +443,14 @@
 
     <!-- Back to top Start -->
     <a href="#home"
-        class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+        class=" fixed z-[9999] bottom-4 right-4 p-4 h-14 w-14 bg-primary rounded-full hidden justify-center items-center hover:animate-pulse"
         id="to-top">
-        <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
+        <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
     </a>
     <!-- Back to top End -->
 
     <script src="dist/js/script.js"></script>
 </body>
-<!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
+
 
 </html>
