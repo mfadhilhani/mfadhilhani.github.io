@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+  @apply m-0 p-0 bg-white;
+  font-family: "Inter", sans-serif;
+}
+
+#bg-img {
+  @apply w-full h-full absolute object-cover;
+}
+
+.section {
+  @apply flex justify-center items-center min-h-screen bg-center bg-cover;
+}
+
+.box {
+  @apply relative w-[400px] h-[450px] flex justify-center items-center border-2 border-gray-400 border-opacity-60 rounded-lg backdrop-blur-md;
+}
+
+.h2 {
+  @apply text-2xl text-white text-center;
+}
+
+.input-field {
+  @apply relative mt-[30px] w-[310px] border-b-2 border-white;
+}
+
+.input-field label {
+  @apply absolute top-1/2 left-0 -translate-y-1/2 text-white text-base pointer-events-none duration-500;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -5px;
+}
+
+.input-field input {
+  @apply w-full h-14 bg-transparent border-0 outline-none text-white text-base px-5 pr-[35px];
+}
+
+.forget {
+  @apply my-[15px] text-sm text-white flex justify-center;
+}
+
+.forget label input {
+  @apply mr-3;
+}
+
+.forget label a {
+  @apply no-underline text-white;
+}
+
+.button a {
+  @apply text-dark hover:text-white no-underline;
+}
+
+.button {
+  @apply bg-primary w-full h-10 rounded-full outline-none border-none cursor-pointer text-base font-semibold;
+}
+
+.button:hover {
+  @apply shadow-md;
+}
+
+.register {
+  font-size: 0.9em;
+  @apply text-xs text-white text-center mt-[25px] mb-10;
+}
+
+.register p a {
+  @apply no-underline text-white;
+}
+
+.regiter p a:hover {
+  @apply no-underline;
+}
